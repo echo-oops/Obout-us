@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Портфолио</title>
+  <meta name="description" content="Портфолио системного администратора: Linux, сети, безопасность, автоматизация, DevOps." />
+  <meta name="keywords" content="системный администратор, Linux, DevOps, безопасность, портфолио, серверы, автоматизация, IT" />
+  <meta name="author" content="Александр Иванов" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Базовые стили и стили страницы -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+
+  <!-- Иконки и шрифт -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Header подгружается динамически -->
+  <div id="header"></div>
+
+  <main>
+    <!-- Главная секция -->
+    <section class="hero" id="hero">
+      <div class="hero-container">
+        <!-- Текстовая колонка -->
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Привет! Я
+          </h1>
+
+          <p class="hero-description">
+            Обеспечиваю стабильную работу IT‑инфраструктуры, настраиваю серверы, обеспечиваю безопасность и мониторинг систем.
+            Специализируюсь на Linux, сетевых технологиях и автоматизации.
+          </p>
+
+          <div class="hero-buttons" role="navigation" aria-label="Навигация по действиям">
+            <a href="portfolio.html" class="btn btn-primary" aria-label="Мои работы">Мои работы</a>
+            <a href="contact.html" class="btn btn-secondary" aria-label="Связаться">Связаться</a>
+          </div>
+        </div>
+
+        <!-- Колонка с изображением -->
+        <div class="hero-image">
+          <div class="profile-card" aria-label="Профиль">
+            <div class="profile-media">
+              <!-- Обратите внимание на регистр папки images -->
+              <img src="images/logo-matrix.jpg" class="profile-img" loading="lazy" />
+              <div class="profile-info" aria-hidden="false">
+                <p class="profile-role">Системный администратор</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Навыки -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <h2 class="section-title">Мои навыки</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fab fa-linux" aria-hidden="true"></i>
+            <h3>Linux</h3>
+            <p>Ubuntu, CentOS, RHEL, Debian</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fas fa-server" aria-hidden="true"></i>
+            <h3>Серверы</h3>
+            <p>Apache, Nginx, DNS, DHCP</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fas fa-network-wired" aria-hidden="true"></i>
+            <h3>Сети</h3>
+            <p>TCP/IP, VLAN, VPN, Firewall</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <h3>Безопасность</h3>
+            <p>Пентестинг, мониторинг, аудит</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fab fa-docker" aria-hidden="true"></i>
+            <h3>Контейнеризация</h3>
+            <p>Docker, Kubernetes, LXC</p>
+          </div>
+
+          <div class="skill-card">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            <h3>Мониторинг</h3>
+            <p>Zabbix, Nagios, Grafana</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer подгружается динамически -->
+  <div id="footer"></div>
+
+  <!-- Скрипты (оставляем подгрузку header/footer и интерактив) -->
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

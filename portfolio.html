@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Портфолио: проекты по инфраструктуре, безопасности и автоматизации — примеры работ, детали и ссылки на репозитории." />
+  <title>Портфолио — Мои работы</title>
+
+  <!-- Performance: preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Иконки -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Стили (оставлены внешними файлами) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-999px;top:auto;overflow:hidden;">Перейти к содержимому</a>
+
+  <!-- Header (подключается через js/header.js) -->
+  <div id="header" aria-hidden="false"></div>
+
+  <main id="main-content" tabindex="-1">
+    <!-- Заголовок страницы -->
+    <section class="page-header" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title" class="page-title">Мои работы</h1>
+        <p class="page-subtitle">Проекты, которыми я горжусь</p>
+      </div>
+    </section>
+
+    <!-- Фильтры -->
+    <section class="portfolio-filters" aria-label="Фильтры портфолио">
+      <div class="container">
+        <div class="filter-buttons" role="tablist" aria-label="Фильтры проектов">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" tabindex="0">Все</button>
+          <button class="filter-btn" data-filter="infrastructure" role="tab" aria-selected="false" tabindex="-1">Инфраструктура</button>
+          <button class="filter-btn" data-filter="security" role="tab" aria-selected="false" tabindex="-1">Безопасность</button>
+          <button class="filter-btn" data-filter="automation" role="tab" aria-selected="false" tabindex="-1">Автоматизация</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Портфолио -->
+    <section class="portfolio" aria-label="Портфолио">
+      <div class="container">
+        <div class="portfolio-grid" aria-live="polite">
+
+          <!-- Проект 1 -->
+          <article class="portfolio-item" data-category="infrastructure" aria-labelledby="p1-title">
+            <div class="portfolio-title-block">
+              <h3 id="p1-title">Серверная инфраструктура с балансировкой</h3>
+            </div>
+
+            <div class="portfolio-image" aria-label="Схема серверной инфраструктуры">
+              <img src="images/portfolio/Cluster-docker-nginx.jpg"
+                   alt="Схема серверной инфраструктуры с балансировкой нагрузки"
+                   loading="lazy" decoding="async">
+            </div>
+
+            <div class="portfolio-desc-block">
+              <p>Развертывание отказоустойчивого кластера из 5 Linux-серверов с Nginx load balancer. Docker-контейнеризация приложений и мониторинг через Zabbix. Проект обеспечивает 99.9% uptime.</p>
+            </div>
+
+            <div class="portfolio-bottom-row">
+              <div class="portfolio-tech" aria-hidden="false">
+                <span class="tech-tag">#ubuntu</span>
+                <span class="tech-tag">#nginx</span>
+                <span class="tech-tag">#docker</span>
+                <span class="tech-tag">#zabbix</span>
+              </div>
+
+              <div class="portfolio-links" aria-hidden="false">
+                <button class="portfolio-link" title="Посмотреть" aria-label="Посмотреть проект" type="button">
+                  <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
+                <a href="https://github.com/username/project1" class="portfolio-link github" title="Код на GitHub" aria-label="Код проекта на GitHub" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Проект 2 -->
+          <article class="portfolio-item" data-category="security" aria-labelledby="p2-title">
+            <div class="portfolio-title-block">
+              <h3 id="p2-title">Аудит безопасности</h3>
+            </div>
+
+            <div class="portfolio-image" aria-label="Аудит безопасности">
+              <img src="images/portfolio/pentest.jpg"
+                   alt="Отчёт и результаты аудита безопасности"
+                   loading="lazy" decoding="async">
+            </div>
+
+            <div class="portfolio-desc-block">
+              <p>Пентестинг и настройка системы мониторинга — поиск уязвимостей. Рекомендации по устранению и повышение уровня безопасности.</p>
+            </div>
+
+            <div class="portfolio-bottom-row">
+              <div class="portfolio-tech">
+                <span class="tech-tag">#kali</span>
+                <span class="tech-tag">#nmap</span>
+                <span class="tech-tag">#wireshark</span>
+                <span class="tech-tag">#fail2ban</span>
+              </div>
+
+              <div class="portfolio-links">
+                <button class="portfolio-link" title="Посмотреть" aria-label="Посмотреть проект" type="button">
+                  <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
+                <a href="https://github.com/username/project2" class="portfolio-link github" title="Код на GitHub" aria-label="Код проекта на GitHub" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Проект 3 -->
+          <article class="portfolio-item" data-category="automation" aria-labelledby="p3-title">
+            <div class="portfolio-title-block">
+              <h3 id="p3-title">Автоматизация развертывания</h3>
+            </div>
+
+            <div class="portfolio-image" aria-label="Автоматизация с Ansible">
+              <img src="images/portfolio/ansible.jpg"
+                   alt="Автоматизация развертывания с Ansible — пример плейбука"
+                   loading="lazy" decoding="async">
+            </div>
+
+            <div class="portfolio-desc-block">
+              <p>Playbook для автоматической настройки серверов и приложений с минимальным вмешательством оператора. Тестирование ролей и интеграция с CI/CD.</p>
+            </div>
+
+            <div class="portfolio-bottom-row">
+              <div class="portfolio-tech">
+                <span class="tech-tag">#ansible</span>
+                <span class="tech-tag">#yaml</span>
+                <span class="tech-tag">#bash</span>
+                <span class="tech-tag">#git</span>
+              </div>
+
+              <div class="portfolio-links">
+                <button class="portfolio-link" title="Посмотреть" aria-label="Посмотреть проект" type="button">
+                  <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
+                <a href="https://github.com/username/project3" class="portfolio-link github" title="Код на GitHub" aria-label="Код проекта на GitHub" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Проект 4 -->
+          <article class="portfolio-item" data-category="infrastructure" aria-labelledby="p4-title">
+            <div class="portfolio-title-block">
+              <h3 id="p4-title">Kubernetes кластер</h3>
+            </div>
+
+            <div class="portfolio-image" aria-label="Kubernetes кластер">
+              <img src="images/portfolio/Kubernets.jpg"
+                   alt="Kubernetes кластер — архитектура и дашборды"
+                   loading="lazy" decoding="async">
+            </div>
+
+            <div class="portfolio-desc-block">
+              <p>Развертывание и настройка Kubernetes кластера для контейнеризации приложений — Helm, CI/CD и мониторинг. Настройка сетевой политики и безопасности кластера.</p>
+            </div>
+
+            <div class="portfolio-bottom-row">
+              <div class="portfolio-tech">
+                <span class="tech-tag">#kubernetes</span>
+                <span class="tech-tag">#helm</span>
+                <span class="tech-tag">#docker</span>
+                <span class="tech-tag">#prometheus</span>
+              </div>
+
+              <div class="portfolio-links">
+                <button class="portfolio-link" title="Посмотреть" aria-label="Посмотреть проект" type="button">
+                  <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
+                <a href="https://github.com/echo-oops/k8s-cluster" class="portfolio-link github" title="Код на GitHub" aria-label="Код проекта на GitHub" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Проект 5 -->
+          <article class="portfolio-item" data-category="security" aria-labelledby="p5-title">
+            <div class="portfolio-title-block">
+              <h3 id="p5-title">Настройка файрвола</h3>
+            </div>
+
+            <div class="portfolio-image" aria-label="Настройка файрвола">
+              <img src="images/portfolio/openvpn.jpg"
+                   alt="Конфигурация файрвола и VPN"
+                   loading="lazy" decoding="async">
+            </div>
+
+            <div class="portfolio-desc-block">
+              <p>Конфигурация iptables и настройка VPN для безопасного доступа. Сегментация сети и автоматизация управления правилами.</p>
+            </div>
+
+            <div class="portfolio-bottom-row">
+              <div class="portfolio-tech">
+                <span class="tech-tag">#iptables</span>
+                <span class="tech-tag">#openvpn</span>
+                <span class="tech-tag">#ufw</span>
+                <span class="tech-tag">#security</span>
+              </div>
+
+              <div class="portfolio-links">
+                <button class="portfolio-link" title="Посмотреть" aria-label="Посмотреть проект" type="button">
+                  <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
+                <a href="https://github.com/echo-oops/Base-settings-on-firewall" class="portfolio-link github" title="Код на GitHub" aria-label="Код проекта на GitHub" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Проект 6 -->
+          <article class="portfolio-item" data-category="automation" aria-labelledby="p6-title">
+            <div class="portfolio-title-block">
+              <h3 id="p6-title">Система мониторинга</h3>
+            </div>
+
+            <div class="portfolio-image" aria-label="Система мониторинга">
+              <img src="images/portfolio/zabbix.jpg"
+                   alt="Интерфейс Zabbix и дашборды Grafana"
+                   loading="lazy" decoding="async">
+            </div>
+
+            <div class="portfolio-desc-block">
+              <p>Настройка Zabbix для мониторинга серверов и уведомлений. Интеграция с Grafana и Alertmanager для визуализации и оповещений.</p>
+            </div>
+
+            <div class="portfolio-bottom-row">
+              <div class="portfolio-tech">
+                <span class="tech-tag">#zabbix</span>
+                <span class="tech-tag">#grafana</span>
+                <span class="tech-tag">#prometheus</span>
+                <span class="tech-tag">#alertmanager</span>
+              </div>
+
+              <div class="portfolio-links">
+                <button class="portfolio-link" title="Посмотреть" aria-label="Посмотреть проект" type="button">
+                  <i class="fas fa-eye" aria-hidden="true"></i>
+                </button>
+                <a href="https://github.com/echo-oops/Scripts-zabbix" class="portfolio-link github" title="Код на GitHub" aria-label="Код проекта на GitHub" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div> <!-- .portfolio-grid -->
+      </div> <!-- .container -->
+    </section>
+
+    <!-- Детали проектов — слайдер -->
+    <section class="project-details" aria-label="Детали проектов">
+      <div class="container">
+        <h2 class="section-title">Детали проектов</h2>
+
+        <div class="details-slider" id="detailsSlider" aria-roledescription="carousel" aria-label="Детали проектов">
+          <div class="slider-viewport" role="region" aria-label="Детали проектов — слайдер">
+            <div class="slider-track" id="detailsTrack">
+              <div class="slide">
+                <div class="detail-card" role="group" aria-roledescription="slide" aria-label="Чистый код">
+                  <div class="detail-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+                  <h3>Чистый код</h3>
+                  <p>Все проекты написаны с соблюдением лучших практик и стандартов кодирования</p>
+                </div>
+              </div>
+
+              <div class="slide">
+                <div class="detail-card" role="group" aria-roledescription="slide" aria-label="Адаптивность">
+                  <div class="detail-icon"><i class="fas fa-mobile-alt" aria-hidden="true"></i></div>
+                  <h3>Адаптивность</h3>
+                  <p>Все сайты и приложения адаптированы для работы на любых устройствах</p>
+                </div>
+              </div>
+
+              <div class="slide">
+                <div class="detail-card" role="group" aria-roledescription="slide" aria-label="Производительность">
+                  <div class="detail-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+                  <h3>Производительность</h3>
+                  <p>Оптимизация скорости загрузки и отзывчивости интерфейса</p>
+                </div>
+              </div>
+
+              <div class="slide">
+                <div class="detail-card" role="group" aria-roledescription="slide" aria-label="Безопасность">
+                  <div class="detail-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                  <h3>Безопасность</h3>
+                  <p>Реализация современных методов защиты данных и аутентификации</p>
+                </div>
+              </div>
+            </div> <!-- .slider-track -->
+          </div> <!-- .slider-viewport -->
+
+          <!-- controls -->
+          <button class="slider-btn prev" type="button" aria-label="Предыдущий слайд" aria-controls="detailsTrack">&lsaquo;</button>
+          <button class="slider-btn next" type="button" aria-label="Следующий слайд" aria-controls="detailsTrack">&rsaquo;</button>
+
+          <!-- dots -->
+          <div class="slider-dots" role="tablist" aria-label="Навигация по слайдеру"></div>
+        </div> <!-- .details-slider -->
+      </div>
+    </section>
+
+   
+  <!-- Footer (подключается через js/footer.js) -->
+  <div id="footer" aria-hidden="false"></div>
+
+  <!-- Скрипты: header/footer, логика портфолио и слайдер -->
+  <script src="js/header.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/portfolio.js" defer></script>
+  <script src="js/details-slider.js" defer></script>
+</body>
+</html>

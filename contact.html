@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Контакты — напишите мне по email, в Telegram или через форму обратной связи. Обсудим ваш проект." />
+  <title>Контакты — Портфолио</title>
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Page styles (подключены отдельно) -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+  <!-- Skip link для клавиатурной навигации -->
+  <a class="skip-link" href="#main-content">Перейти к содержимому</a>
+
+  <!-- Header (вставляется через js/header.js) -->
+  <div id="header" aria-hidden="false"></div>
+
+  <main id="main-content" tabindex="-1">
+    <!-- Заголовок -->
+    <section class="page-header" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title" class="page-title">Контакты</h1>
+        <p class="page-subtitle">Свяжитесь со мной для обсуждения вашего проекта</p>
+      </div>
+    </section>
+
+    <!-- Контактная информация -->
+    <section class="contact-info" aria-label="Контактная информация">
+      <div class="container">
+        <!-- Гибкая сетка: CSS управляет количеством колонок (на десктопе — 4 в ряд) -->
+        <div class="contact-grid" role="list">
+          <article class="contact-card" role="listitem" aria-labelledby="email-title">
+            <div class="contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+            <h3 id="email-title">Email</h3>
+            <p class="contact-meta">dochimovbobur@gmail.com</p>
+            <a class="contact-link" href="mailto:dochimovbobur@gmail.com">Написать письмо</a>
+          </article>
+
+          <article class="contact-card" role="listitem" aria-labelledby="tg-title">
+            <div class="contact-icon" aria-hidden="true"><i class="fab fa-telegram"></i></div>
+            <h3 id="tg-title">Telegram</h3>
+            <p class="contact-meta">@echo_oops</p>
+            <a class="contact-link" href="https://t.me/echo_oops" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+          </article>
+
+          <article class="contact-card" role="listitem" aria-labelledby="li-title">
+            <div class="contact-icon" aria-hidden="true"><i class="fab fa-linkedin"></i></div>
+            <h3 id="li-title">LinkedIn</h3>
+            <p class="contact-meta">linkedin.com/in/username</p>
+            <a class="contact-link" href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer">Посмотреть профиль</a>
+          </article>
+
+          <article class="contact-card" role="listitem" aria-labelledby="gh-title">
+            <div class="contact-icon" aria-hidden="true"><i class="fab fa-github"></i></div>
+            <h3 id="gh-title">GitHub</h3>
+            <p class="contact-meta">github.com/username</p>
+            <a class="contact-link" href="https://github.com/username" target="_blank" rel="noopener noreferrer">Посмотреть код</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section class="contact-form-section" aria-labelledby="form-title">
+      <div class="container">
+        <div class="form-container" role="region" aria-labelledby="form-title">
+          <div class="form-header">
+            <h2 id="form-title">Напишите мне</h2>
+            <p>Заполните форму ниже — я свяжусь с вами в ближайшее время.</p>
+          </div>
+
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="subject">Тема письма *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Выберите тему</option>
+                <option value="collaboration">Сотрудничество</option>
+                <option value="consultation">Консультация</option>
+                <option value="other">Другое</option>
+              </select>
+              <span id="subjectError" class="error-message" aria-live="polite" aria-hidden="true"></span>
+            </div>
+
+            <div class="form-group">
+              <label id="contact-method-label">Контактные данные *</label>
+              <div class="contact-method-group" role="radiogroup" aria-labelledby="contact-method-label">
+                <div class="radio-group">
+                  <input type="radio" id="method-telegram" name="contactMethod" value="telegram" required>
+                  <label for="method-telegram"><i class="fab fa-telegram" aria-hidden="true"></i> Telegram</label>
+                </div>
+                <div class="radio-group">
+                  <input type="radio" id="method-instagram" name="contactMethod" value="instagram" required>
+                  <label for="method-instagram"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</label>
+                </div>
+                <div class="radio-group">
+                  <input type="radio" id="method-email" name="contactMethod" value="email" required>
+                  <label for="method-email"><i class="fas fa-envelope" aria-hidden="true"></i> Email</label>
+                </div>
+              </div>
+              <span id="contactMethodError" class="error-message" aria-live="polite" aria-hidden="true"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contactInfo">Ваши контактные данные *</label>
+              <input type="text" id="contactInfo" name="contactInfo" placeholder="Введите ваш Telegram, Instagram или Email" required>
+              <span id="contactInfoError" class="error-message" aria-live="polite" aria-hidden="true"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Сообщение *</label>
+              <textarea id="message" name="message" rows="6" placeholder="Опишите ваш проект или вопрос..." required></textarea>
+              <span id="messageError" class="error-message" aria-live="polite" aria-hidden="true"></span>
+            </div>
+
+            <div class="form-buttons">
+              <button type="button" id="clearBtn" class="btn btn-secondary">Очистить</button>
+              <button type="submit" id="submitBtn" class="btn btn-primary" disabled>Отправить</button>
+            </div>
+
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title" class="section-title">Часто задаваемые вопросы</h2>
+
+        <div class="faq-list" id="faqList">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+              <span>Сколько времени занимает разработка проекта?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="faq1" class="faq-answer" hidden>
+              <p>Время разработки зависит от сложности: простой лендинг — 1–2 недели, сложное веб‑приложение — 1–3 месяца. Сроки обсуждаем индивидуально.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+              <span>Какие технологии вы используете?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="faq2" class="faq-answer" hidden>
+              <p>Работаю с React, Vue, Node.js, Python и другими инструментами. Выбор стека зависит от задачи.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+              <span>Предоставляете ли вы поддержку после завершения?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="faq3" class="faq-answer" hidden>
+              <p>Да, предоставляю поддержку и консультации. Условия обсуждаются индивидуально.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+              <span>Работаете ли вы с зарубежными клиентами?</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="faq4" class="faq-answer" hidden>
+              <p>Да, работаю с клиентами из разных стран.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (вставляется через js/footer.js) -->
+  <div id="footer" aria-hidden="false"></div>
+
+  <!-- Скрипты (подключены с defer) -->
+  <script src="js/header.js" defer></script>
+  <script src="js/footer.js" defer></script>
+  <script src="js/contact.js" defer></script>
+</body>
+</html>

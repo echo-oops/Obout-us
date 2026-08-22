@@ -1,0 +1,411 @@
+:root {
+  --bg-1:#181a20
+  --accent: #fbbf24;
+  --accent-dark: #f59e0b;
+  --card-bg: #1e293b;
+  --card-border: #181a20;
+  --card-shadow: 0 8px 24px rgba(0,0,0,0.28);
+}
+
+/* ===============================
+   ОСНОВА СТРАНИЦЫ
+================================ */
+body {
+  color: #ffffff;
+  background-color: #181a20;
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   ЗАГОЛОВОК
+================================ */
+.page-header {
+  padding: 3rem 0 1.5rem;
+}
+
+.page-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page-subtitle {
+  color: #cbd5f5;
+  margin-top: .4rem;
+  margin-bottom: 0;
+}
+
+/* ===============================
+   ФИЛЬТРЫ
+================================ */
+.filter-buttons {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-btn {
+  background: #181a20;
+  color: #fff;
+  border: 1px solid #334155;
+  padding: .45rem .9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: .95rem;
+  transition: background .18s ease, color .12s ease, box-shadow .12s ease;
+}
+
+.filter-btn:hover {
+  background: color-mix(in srgb, var(--accent) 90%, #1e293b);
+}
+
+.filter-btn.active,
+.filter-btn:focus {
+  background: var(--accent);
+  color: #181a20 ;
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 6px 18px rgba(251,191,36,0.12);
+}
+
+/* ===============================
+   ПОРТФОЛИО СЕТКА
+================================ */
+.portfolio {
+  padding: 2rem 0 4rem;
+  background: #181a20;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.4rem;
+}
+
+/* ===============================
+   КАРТОЧКА ПРОЕКТА
+================================ */
+.portfolio-item {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--card-border);
+  transition: transform .2s ease, box-shadow .2s ease;
+  min-height: 220px;
+}
+
+.portfolio-item:hover,
+.portfolio-item:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 40px rgba(0,0,0,.35);
+}
+
+/* Заголовок */
+.portfolio-title-block h3 {
+  font-size: 1.15rem;
+  margin: 0 0 .6rem 0;
+  line-height: 1.2;
+}
+
+/* ===============================
+   ИЗОБРАЖЕНИЕ
+================================ */
+.portfolio-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: .7rem;
+  background: #020617 ;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===============================
+   ОПИСАНИЕ
+================================ */
+.portfolio-desc-block {
+  font-size: .95rem;
+  color: #e5e7eb;
+  line-height: 1.4;
+  margin-bottom: .6rem;
+}
+
+.portfolio-desc-block.collapsed {
+  overflow: hidden;
+  max-height: 3.6em;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: .85rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: .4rem;
+}
+
+/* ===============================
+   НИЖНЯЯ СТРОКА
+================================ */
+.portfolio-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-top: auto;
+}
+
+/* ===============================
+   ХЭШТЕГИ
+================================ */
+.portfolio-tech {
+  display: flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tech-tag {
+  font-size: .72rem;
+  padding: .18rem .55rem;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ===============================
+   ССЫЛКИ
+================================ */
+.portfolio-links {
+  margin-left: auto;
+  display: flex;
+  gap: .4rem;
+  align-items: center;
+}
+
+.portfolio-link {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #181a20;
+  border: 1px solid var(--card-border);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .18s ease, color .18s ease, transform .12s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
+  background: var(--accent);
+  color: #020617;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* ===============================
+   ДЕТАЛИ ПРОЕКТОВ (СЛАЙДЕР)
+================================ */
+.project-details {
+  padding: 4rem 0;
+  background: #181a20;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Обёртка */
+.details-slider {
+  position: relative;
+  padding: 24px 0;
+  --slide-gap: 20px;
+  --slide-visible: 3;
+}
+
+.details-slider .slider-viewport {
+  width: min(1080px, 96%);
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Лента */
+.details-slider .slider-track {
+  display: flex;
+  gap: var(--slide-gap);
+  transition: transform .45s cubic-bezier(.22,.9,.3,1);
+  will-change: transform;
+  align-items: stretch;
+}
+
+/* Слайд */
+.details-slider .slide {
+  flex: 0 0 calc((100% - (var(--slide-gap) * (var(--slide-visible) - 1))) / var(--slide-visible));
+  max-width: calc((100% - (var(--slide-gap) * (var(--slide-visible) - 1))) / var(--slide-visible));
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 6px;
+}
+
+/* Карточка детали */
+.details-slider .detail-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--card-bg);
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Иконка */
+.details-slider .detail-icon,
+.detail-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--accent), var(--accent-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+/* ===============================
+   КНОПКИ СЛАЙДЕРА
+================================ */
+.details-slider .slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 0;
+  background: rgba(10,12,18,0.8);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+}
+
+/* Выравнивание кнопок относительно max-width 1080 */
+.details-slider .slider-btn.prev { left: calc(50% - 540px - 28px); }
+.details-slider .slider-btn.next { right: calc(50% - 540px - 28px); }
+
+/* если контейнер уже меньше — поправим позиционирование кнопок */
+@media (max-width: 1100px) {
+  .details-slider .slider-btn.prev { left: 8px; }
+  .details-slider .slider-btn.next { right: 8px; }
+  .details-slider .slider-viewport { width: min(860px, 96%); }
+}
+
+/* Точки пагинации */
+.details-slider .slider-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.details-slider .slider-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+}
+
+.details-slider .slider-dots button[aria-selected="true"],
+.details-slider .slider-dots button.active {
+  background: var(--accent);
+  box-shadow: 0 2px 8px rgba(251,191,36,0.14);
+}
+
+/* Адаптив: на tablet показываем 2, на мобильном 1 */
+@media (max-width: 900px) {
+  .details-slider { --slide-visible: 2; }
+  .details-slider .slider-viewport { width: min(720px, 96%); }
+}
+
+@media (max-width: 640px) {
+  .details-slider { --slide-visible: 1; }
+  .details-slider .slider-viewport { width: 96%; }
+  .details-slider .slider-btn { display: none; }
+}
+
+/* ===============================
+   АДАПТИВНОСТЬ
+================================ */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-slider .detail-card {
+    width: 260px;
+  }
+}
+
+/* ===============================
+   Утилиты
+================================ */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  width: auto;
+  height: auto;
+  background: #fff;
+  color: #020617;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 1000;
+}

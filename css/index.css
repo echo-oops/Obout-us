@@ -1,0 +1,360 @@
+:root{
+  --bg-dark: #181a20;
+  --panel: #20222a;
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.65);
+  --accent: #fbbf24;
+  --border: rgba(255,255,255,0.06);
+  --glass: rgba(255,255,255,0.03);
+  --max-width: 1200px;
+  --container-padding: 20px;
+  --radius: 12px;
+  --transition: 160ms ease;
+}
+
+/* =========================
+   Базовые правила
+   ========================= */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #181a20 0%, #101114 100%);
+  color: var(--text);
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Контейнер */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* =========================
+   HERO
+   ========================= */
+.hero {
+  padding: 64px 0 40px;
+  background: linear-gradient(135deg, #13151a 0%, #181a20 100%);
+  color: var(--text);
+}
+
+.hero-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.8rem;
+  align-items: center;
+}
+
+.hero-content { max-width: 640px; }
+
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.08;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.4px;
+}
+
+.highlight {
+  background: linear-gradient(45deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-description {
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.92);
+  max-width: 56ch;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Кнопки */
+.hero-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.56rem 0.9rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  min-width: 96px;
+  transition: transform var(--transition), box-shadow var(--transition);
+  will-change: transform;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  color: #111;
+  box-shadow: 0 6px 14px rgba(251,191,36,0.10);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: translateY(-3px);
+  outline: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  outline: none;
+}
+
+/* =========================
+   PROFILE / IMAGE
+   ========================= */
+.hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+  border: 1px solid rgba(255,255,255,0.02);
+  overflow: hidden;
+}
+
+/* Центрирование медиа и место для подписи */
+.profile-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 8px;
+  padding-bottom: 48px;
+}
+
+/* Круглая картинка по центру */
+.profile-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(35,36,42,0.9);
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Подпись поверх картинки внизу; уменьшены ресурсоёмкие эффекты */
+.profile-info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 10px;
+  color: var(--text);
+  width: calc(100% - 2rem);
+  max-width: 280px;
+  box-sizing: border-box;
+}
+
+.profile-info h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.profile-info p.profile-role {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* =========================
+   SKILLS (оптимизировано)
+   ========================= */
+.skills {
+  padding: 40px 0;
+  background: #181a20;
+  color: var(--text);
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+/* Сетка карточек */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1rem;
+  align-items: stretch;
+}
+
+/* Карточка — фиксированная высота для стабильности */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.28);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 180ms ease;
+  color: var(--text);
+  text-align: center;
+  min-height: 170px;
+  will-change: transform;
+  overflow: hidden;
+}
+
+/* Лёгкий hover-эффект */
+.skill-card:hover,
+.skill-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  border-color: rgba(251,191,36,0.85);
+}
+
+/* Иконка */
+.skill-card i {
+  font-size: 2.2rem;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(251,191,36,0.10), rgba(251,191,36,0.04));
+  box-shadow: 0 6px 12px rgba(251,191,36,0.04);
+}
+
+/* Заголовок и текст */
+.skill-card h3 {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.skill-card p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: rgba(229,231,235,0.9);
+  line-height: 1.45;
+  max-width: 40ch;
+}
+
+/* Компактный вариант (опционально) */
+.skills-grid.compact { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.skills-grid.compact .skill-card { min-height: 150px; }
+
+/* =========================
+   FOOTER (стили только для внешнего footer, не меняют структуру)
+   ========================= */
+.footer {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #23242a 100%);
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
+  padding: 24px 0;
+  box-sizing: border-box;
+}
+
+.footer-bar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-nav { display: flex; gap: 1.4rem; }
+.footer-nav a { color: var(--text); font-size: 0.95rem; text-decoration: none; transition: color var(--transition); }
+.footer-nav a:hover { color: var(--accent); }
+
+.footer-socials { display: flex; gap: 1rem; align-items: center; }
+.footer-socials a { color: var(--text); text-decoration: none; opacity: 0.95; display: inline-flex; align-items: center; justify-content: center; transition: color var(--transition), transform var(--transition); }
+.footer-bottom { margin-top: 10px; text-align: center; font-size: 0.92rem; color: var(--muted); }
+
+/* =========================
+   Фокус и доступность
+   ========================= */
+.btn:focus,
+.footer-nav a:focus,
+.footer-socials a:focus {
+  outline: 3px solid rgba(251,191,36,0.12);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* =========================
+   АДАПТИВ
+   ========================= */
+@media (max-width: 1100px) {
+  .hero-container { grid-template-columns: 1fr 380px; gap: 2rem; }
+  .profile-img { width: 240px; height: 240px; }
+  .hero-title { font-size: 2.4rem; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .skill-card { min-height: 150px; }
+}
+
+@media (max-width: 900px) {
+  .hero-container { grid-template-columns: 1fr; text-align: center; padding: 0 16px; }
+  .hero-image { order: -1; margin-bottom: 1rem; }
+  .profile-card { max-width: 320px; margin: 0 auto; }
+  .profile-img { width: 200px; height: 200px; }
+  .hero-title { font-size: 2rem; }
+  .hero-buttons { justify-content: center; gap: 0.6rem; }
+}
+
+@media (max-width: 640px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-card { min-height: 120px; padding: 1rem; }
+  .skill-card i { width: 44px; height: 44px; font-size: 1.8rem; }
+  .profile-img { width: 160px; height: 160px; }
+  .hero-title { font-size: 1.6rem; }
+}
+
+/* Уменьшение анимаций для пользователей, которые этого предпочитают */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,100 @@
+.footer {
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #23242a 100%);
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+  padding: 28px 0 28px; /* увеличены верхний и нижний отступы */
+  box-sizing: border-box;
+}
+
+/* ОДНА ГОРИЗОНТАЛЬНАЯ СТРОКА */
+.footer-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* чуть больше боковых отступов */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Навигация слева */
+.footer-nav {
+  display: flex;
+  gap: 2rem; /* увеличен интервал между пунктами */
+}
+
+.footer-nav a {
+  color: var(--text);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  color: var(--accent);
+  outline: none;
+}
+
+/* Контакты справа */
+.footer-socials {
+  display: flex;
+  gap: 1.6rem; /* немного больше расстояния между иконками */
+  align-items: center;
+}
+
+.footer-socials .social-link {
+  color: var(--text);
+  text-decoration: none;
+  opacity: 0.95;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.18s ease, opacity 0.18s ease, transform 0.12s ease;
+}
+
+.footer-socials .social-link svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.footer-socials .social-link:hover,
+.footer-socials .social-link:focus {
+  color: var(--accent);
+  opacity: 1;
+  transform: translateY(-3px); /* лёгкое поднятие при наведении */
+  outline: none;
+}
+
+/* Копирайт */
+.footer-bottom {
+  margin-top: 12px; /* подняли копирайт от верхнего блока */
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--muted);
+  padding-bottom: 6px; /* дополнительный отступ снизу, чтобы не прилипал к границе */
+  line-height: 1.4;
+}
+
+/* АДАПТИВ */
+@media (max-width: 768px) {
+  .footer-bar {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .footer-nav,
+  .footer-socials {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-nav {
+    gap: 1rem;
+  }
+}
